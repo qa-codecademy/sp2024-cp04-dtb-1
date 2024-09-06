@@ -1,7 +1,8 @@
-import { renderPostInPostPage } from "../javascript files/renderPostInPostPage.js";
+import { renderPostInPostPage } from "./renderPostInPostPage.js";
 
-export const renderPostList = (posts, container) => {
-  for (const post of posts) {
+export const renderTrendingPostList = (posts, container) => {
+  const sortedPosts = posts.filter((post) => post.rating >= 5).slice(0, 2);
+  for (const post of sortedPosts) {
     const postContainerEl = document.createElement("DIV");
 
     postContainerEl.classList.add("post-container");
@@ -11,7 +12,8 @@ export const renderPostList = (posts, container) => {
                 <div class="blog-post_img">
                   <img
                     src=${post.image}
-                    alt="Post image"                    
+                    alt=""
+                    height="45px"
                   />
                 </div>
                 <div class="blog-post_info">
