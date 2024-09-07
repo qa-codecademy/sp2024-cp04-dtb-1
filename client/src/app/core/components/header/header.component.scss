@@ -1,0 +1,42 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--bg-grey);
+  border-bottom: 2px solid var(--border-hover-color);
+
+  h1 {
+    margin: 0;
+    color: var(--font-color);
+    font-weight: 300;
+    font-size: 42px;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 10px 0;
+    text-decoration: none;
+
+    li {
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 16px;
+      font-weight: 300;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        color: var(--font-color);
+        padding: 7px;
+        transition: 0.2s ease-in;
+        border-radius: 4px;
+
+        &:hover {
+          color: var(--border-hover-color);
+        }
+      }
+    }
+  }
+}
