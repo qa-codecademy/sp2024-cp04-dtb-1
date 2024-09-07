@@ -1,0 +1,30 @@
+.container-post {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.item-post {
+  background: var(--bg-grey);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.image-post {
+  width: 100%;
+  height: auto;
+}
+
+.description-post {
+  padding: 20px;
+  font-size: 15px;
+  line-height: 1, 2;
+
+  .button {
+    display: flex;
+    justify-content: end;
+  }
+}

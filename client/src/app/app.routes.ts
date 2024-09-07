@@ -4,8 +4,13 @@ import { RegisterComponent } from './feature/auth/components/register/register.c
 import { AboutComponent } from './feature/about/about.component';
 import { ContactComponent } from './feature/contact/contact.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { PostCardComponent } from './feature/posts/components/post-card/post-card.component';
 
 export const routes: Routes = [
+  {
+    path: '',
+    component: PostCardComponent,
+  },
   {
     path: 'about',
     component: AboutComponent,

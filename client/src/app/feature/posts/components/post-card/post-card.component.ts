@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
+import { ButtonComponent } from '../../../../shared/button/button.component';
 
 @Component({
   selector: 'app-post-card',
   standalone: true,
-  imports: [],
+  imports: [ButtonComponent],
   templateUrl: './post-card.component.html',
-  styleUrl: './post-card.component.scss'
+  styleUrl: './post-card.component.scss',
 })
-export class PostCardComponent {
-
-}
+export class PostCardComponent {}
