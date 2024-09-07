@@ -5,30 +5,48 @@
         <img src="/images/only logo.png" width="138" />
       </div>
       <h1 class="heading">Register</h1>
-      <form class="form">
+      <form class="form" [formGroup]="registerForm" (ngSubmit)="onFormSubmit()">
         <div class="form-group">
-          <input id="firstName" placeholder="First name" type="text" />
+          <input
+            id="firstName"
+            placeholder="First name"
+            type="text"
+            formControlName="firstName"
+          />
         </div>
         <div class="form-group">
-          <input id="lastName" placeholder="Last name" type="text" />
+          <input
+            id="lastName"
+            placeholder="Last name"
+            type="text"
+            formControlName="lastName"
+          />
         </div>
         <div class="form-group">
-          <input id="username" placeholder="Email" type="text" />
+          <input placeholder="Email" type="text" formControlName="email" />
         </div>
-        <div id="form-login-password" class="form-group">
-          <input id="password" placeholder="Password" type="password" />
+        <div class="form-group">
+          <input
+            placeholder="Password"
+            type="password"
+            formControlName="password"
+          />
         </div>
-        <div id="form-login-rePassword" class="form-group">
-          <input placeholder="Confirm password" type="password" />
+        <div class="form-group">
+          <input
+            placeholder="Confirm password"
+            type="password"
+            formControlName="confirmPassword"
+          />
+        </div>
+        <div class="login-form-button-div">
+          <button class="register-button" type="submit">Register</button>
+        </div>
+        <div class="login-message">
+          Already have an account?
+          <a>Log In</a>
         </div>
       </form>
-      <div class="login-form-button-div">
-        <button class="register-button" type="submit">Register</button>
-      </div>
-      <div class="login-message">
-        Already have an account?
-        <a>Log In</a>
-      </div>
     </div>
   </div>
 </section>
