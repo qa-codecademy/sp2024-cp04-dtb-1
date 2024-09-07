@@ -1,0 +1,137 @@
+.forms-page {
+  min-height: 800px;
+  display: grid;
+  place-items: center;
+}
+
+.forms-container {
+  width: 350px;
+  height: 550px;
+  background-color: var(--bg-grey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+  .logo-image,
+  p {
+    text-align: center;
+  }
+}
+
+.forms-register-container {
+  width: 350px;
+  height: 600px;
+  background-color: var(--bg-grey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+  .logo-image,
+  p {
+    text-align: center;
+  }
+}
+
+.heading {
+  font-size: 35px;
+  font-weight: 100;
+  line-height: 1.2;
+  margin: 0 0 25px 0;
+  color: var(--font-color);
+  text-transform: inherit;
+  letter-spacing: inherit;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  color: var(--font-color);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  input {
+    width: 200px;
+    padding: 5px;
+    height: 35px;
+    border: 1px solid grey;
+    border-radius: 5px;
+  }
+}
+
+.form-login-remember {
+  height: 20px;
+  color: var(--font-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  label {
+    color: var(--font-color);
+  }
+
+  input {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}
+
+.login-form-button-div {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button {
+    width: 130px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid var(--border-hover-color);
+    color: var(--font-color);
+    background-color: var(--bg-grey);
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--border-hover-color);
+    }
+  }
+}
+
+.register-message {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--font-color);
+}
+
+.login-message {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--font-color);
+}
