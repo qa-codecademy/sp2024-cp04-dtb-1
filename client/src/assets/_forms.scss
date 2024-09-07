@@ -98,7 +98,7 @@
 }
 
 .login-form-button-div {
-  height: 80px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,20 +118,15 @@
   }
 }
 
-.register-message {
+.form-message {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 5px;
   gap: 10px;
   font-size: 14px;
   color: var(--font-color);
-}
 
-.login-message {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  gap: 10px;
-  font-size: 14px;
-  color: var(--font-color);
+  a {
+    color: var(--font-color);
+  }
 }
