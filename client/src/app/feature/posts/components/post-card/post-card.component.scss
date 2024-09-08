@@ -6,7 +6,7 @@
 
 .item-post {
   width: 600px;
-  height: 400px;
+  height: 450px;
   background: var(--bg-grey);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
@@ -21,7 +21,7 @@
 }
 
 .description-post {
-  padding: 20px;
+  padding: 25px;
   font-size: 15px;
   line-height: 1, 2;
 
@@ -31,16 +31,27 @@
     color: var(--font-color);
   }
 }
-
-.post-info-container {
-  padding-top: 5px;
+.post-info {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 10px;
+
+  p {
+    margin: 0;
+  }
+  samp {
+    display: flex;
+    align-items: center;
+    color: yellow;
+  }
 }
 
 .post-button-container {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
-  padding: 0 20px;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding-top: 15px;
 }
