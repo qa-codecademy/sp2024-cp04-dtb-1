@@ -1,4 +1,5 @@
 import { Comment } from 'src/comments/entities/comment.entity';
+import { Rating } from 'src/ratings/entities/rating.entity';
 import { User } from 'src/users/entities/user.entity';
 import {
   PrimaryGeneratedColumn,
@@ -6,6 +7,7 @@ import {
   Entity,
   ManyToOne,
   OneToMany,
+  IntegerType,
 } from 'typeorm';
 
 @Entity()
@@ -19,13 +21,6 @@ export class Post {
   @Column()
   date: string;
 
-  @Column({
-    array: true,
-    default: [],
-    nullable: true,
-  })
-  ratings: number;
-
   @Column()
   text: string;
 
@@ -37,4 +32,7 @@ export class Post {
 
   @OneToMany(() => Comment, (comment) => comment.post)
   comments: Comment[];
+
+  @OneToMany(() => Rating, (ratings) => ratings.post)
+  ratings: Rating[];
 }

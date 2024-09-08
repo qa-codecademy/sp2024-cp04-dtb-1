@@ -38,13 +38,13 @@ export class CommentsController {
     return this.commentsService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateCommentDto: UpdateCommentDto) {
-    return this.commentsService.update(+id, updateCommentDto);
-  }
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updateCommentDto: UpdateCommentDto) {
+  //   return this.commentsService.update(+id, updateCommentDto);
+  // }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.commentsService.remove(+id);
-  }
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.commentsService.remove(+id);
+  // }
 }

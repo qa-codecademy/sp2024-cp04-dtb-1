@@ -1,4 +1,4 @@
-import { Post } from 'src/reviews/entities/post.entity';
+import { Post } from 'src/posts/entities/post.entity';
 import { User } from 'src/users/entities/user.entity';
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 
