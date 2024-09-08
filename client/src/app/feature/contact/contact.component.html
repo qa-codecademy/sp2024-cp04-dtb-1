@@ -7,50 +7,31 @@
           <div class="formBox">
             <div class="row50">
               <div class="inputBox">
-                <span>First Name</span>
-                <input
-                  type="text"
-                  placeholder="Enter first name"
-                  formControlName="firstName"
-                />
+                <span>First Name *</span>
+                <input type="text" formControlName="firstName" />
               </div>
               <div class="inputBox">
-                <span>Last Name</span>
-                <input
-                  type="text"
-                  placeholder="Enter last name"
-                  formControlName="lastName"
-                />
+                <span>Last Name *</span>
+                <input type="text" formControlName="lastName" />
               </div>
             </div>
             <div class="row50">
               <div class="inputBox">
-                <span>Email</span>
-                <input
-                  type="text"
-                  placeholder="Enter email"
-                  formControlName="email"
-                />
+                <span>Email Address *</span>
+                <input type="text" formControlName="email" />
               </div>
               <div class="inputBox">
-                <span>Mobile</span>
-                <input
-                  type="text"
-                  placeholder="Enter phone number"
-                  formControlName="mobile"
-                />
+                <span>Phone Number *</span>
+                <input type="text" formControlName="mobile" />
               </div>
             </div>
             <div class="row100">
               <div class="inputBox">
-                <span>Message</span>
-                <textarea
-                  placeholder="Write your message here..."
-                  formControlName="message"
-                ></textarea>
+                <span>Message *</span>
+                <textarea placeholder="How are you looking to use Tech Sphere..." formControlName="message"></textarea>
                 <p>
                   {{ contactForm.get("message").value.length }}/{{
-                    messageMaxLength
+                  messageMaxLength
                   }}
                 </p>
               </div>
@@ -90,8 +71,7 @@
       </div>
       <div class="contact map">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2097.0027721206643!2d21.438643308167457!3d41.987187625158796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1354156e09f8f943%3A0x4f70677f66ebc77c!2sQinshift%20Academy!5e0!3m2!1smk!2smk!4v1719705662759!5m2!1smk!2smk"
-        ></iframe>
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2097.0027721206643!2d21.438643308167457!3d41.987187625158796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1354156e09f8f943%3A0x4f70677f66ebc77c!2sQinshift%20Academy!5e0!3m2!1smk!2smk!4v1719705662759!5m2!1smk!2smk"></iframe>
       </div>
     </div>
   </div>
