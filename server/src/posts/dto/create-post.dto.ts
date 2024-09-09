@@ -2,6 +2,9 @@ import { IsString, IsNumber } from 'class-validator';
 
 export class CreatePostDto {
   @IsString()
+  userId: string;
+
+  @IsString()
   title: string;
 
   @IsNumber()

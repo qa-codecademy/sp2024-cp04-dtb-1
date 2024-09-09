@@ -9,10 +9,9 @@ import { Repository } from 'typeorm';
 export class PostService {
   constructor(@InjectRepository(Post) private postsRepo: Repository<Post>) {}
 
-  create(id: string, createPostDto: CreatePostDto) {
+  create(createPostDto: CreatePostDto) {
     return this.postsRepo.save({
       ...createPostDto,
-      user: { id },
     });
   }
 
