@@ -1,6 +1,5 @@
-import { Body, Controller, Get, Param, Patch, Post, Req } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
 import { RatingsService } from './ratings.service';
-import { User } from 'src/users/entities/user.entity';
 import { CreateRatingDto } from './dto/create-rating.dto';
 import { UpdateRatingDto } from './dto/update-rating.dto';
 
@@ -8,9 +7,9 @@ import { UpdateRatingDto } from './dto/update-rating.dto';
 export class RatingsController {
   constructor(private readonly ratingsService: RatingsService) {}
 
-  @Post()
-  create(@Body() createRatingDto: CreateRatingDto, @Req() req: { user: User }) {
-    return this.ratingsService.create(req.user.id, createRatingDto);
+  @Post('add-rating')
+  create(@Body() createRatingDto: CreateRatingDto) {
+    return this.ratingsService.create(createRatingDto);
   }
 
   @Get()

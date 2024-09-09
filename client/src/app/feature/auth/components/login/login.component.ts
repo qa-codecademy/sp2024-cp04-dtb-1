@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../../../../core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent {
+  private authService = inject(AuthService);
+  isSubmitted = signal(false);
   loginForm = this.generateLoginForm();
 
   generateLoginForm() {
@@ -26,10 +29,16 @@ export class LoginComponent {
 
   onFormSubmit() {
     this.loginForm.markAllAsTouched();
+    this.isSubmitted.set(true);
 
-    if (!this.loginForm.invalid) return;
+    if (this.loginForm.invalid) return;
 
     console.log(this.loginForm.value);
+
+    this.authService.loginUser({
+      email: this.loginForm.value.email,
+      password: this.loginForm.value.password,
+    });
 
     this.loginForm.reset();
   }

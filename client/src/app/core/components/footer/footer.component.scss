@@ -10,6 +10,13 @@
   width: 100%;
   border-top: 2.5px solid var(--border-hover-color);
 }
+
+menu {
+  h2 {
+    margin: 0;
+    padding-bottom: 35px;
+  }
+}
 li {
   list-style-type: none;
   margin-bottom: 16px;
@@ -27,22 +34,6 @@ li {
   margin: 0 auto;
   max-width: 800px;
   padding: 20px 10px 0 10px;
-}
-
-.infoone {
-  padding-top: 30px;
-}
-
-.infoone h2 {
-  padding-bottom: 20px;
-}
-
-.infotwoo {
-  padding-top: 30px;
-}
-
-.infotwoo h2 {
-  padding-bottom: 20px;
 }
 
 .social-links {

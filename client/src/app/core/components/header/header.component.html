@@ -1,14 +1,30 @@
 <header class="Header">
-  <div class="logo-div">
+  <div class="logo-div" routerLink="/">
     <img src="/images/logo.png" width="200px" />
   </div>
   <nav class="Navbar">
     <ul>
       <li><a routerLink="/">Posts</a></li>
+      @if(currentUser()){
       <li><a>Add post</a></li>
+      }
       <li><a routerLink="/about">About</a></li>
       <li><a routerLink="/contact">Contact</a></li>
+
+      @if(currentUser()){
+      <li class="dropdown">
+        <div class="dropbtn">
+          <i class="fa-solid fa-user"></i>
+          <i class="fa fa-caret-down"></i>
+        </div>
+        <div class="dropdown-content">
+          <a>{{ currentUser()?.username }}</a>
+          <a (click)="onLogOutClick()">Logout</a>
+        </div>
+      </li>
+      } @else {
       <li><a routerLink="/login">Login</a></li>
+      }
       <li><i class="fa-solid fa-lightbulb"></i></li>
     </ul>
   </nav>

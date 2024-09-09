@@ -11,14 +11,14 @@ export class CommentsService {
     @InjectRepository(Comment) private commentsRepo: Repository<Comment>,
   ) {}
 
-  create(userId: string, createCommentDto: CreateCommentDto) {
+  create(createCommentDto: CreateCommentDto) {
     return this.commentsRepo.save({
       text: createCommentDto.text,
       post: {
         id: createCommentDto.postId,
       },
       user: {
-        id: userId,
+        id: createCommentDto.userId,
       },
     });
   }

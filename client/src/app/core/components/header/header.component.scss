@@ -6,6 +6,10 @@
   background-color: var(--bg-grey);
   border-bottom: 2px solid var(--border-hover-color);
 
+  .logo-div {
+    cursor: pointer;
+  }
+
   h1 {
     margin: 0;
     color: var(--font-color);
@@ -16,12 +20,12 @@
   ul {
     display: flex;
     list-style: none;
-    padding: 10px 0;
+    padding: 5px 0;
     text-decoration: none;
 
     li {
       text-decoration: none;
-      margin: 0 10px;
+      margin: 0 13px;
       font-size: 16px;
       font-weight: 300;
       cursor: pointer;
@@ -39,4 +43,54 @@
       }
     }
   }
+}
+// Dropdown menu css
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  display: flex;
+  gap: 5px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: var(--font-color);
+  background-color: inherit;
+  margin: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--bg-grey);
+  min-width: 80px;
+  top: 50px;
+  right: 70px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+  a {
+    float: none;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+  }
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: var(--font-color);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }

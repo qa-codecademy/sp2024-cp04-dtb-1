@@ -11,14 +11,14 @@ export class RatingsService {
     @InjectRepository(Rating) private ratingRepo: Repository<Rating>,
   ) {}
 
-  create(userId: string, createRatingDto: CreateRatingDto) {
+  create(createRatingDto: CreateRatingDto) {
     return this.ratingRepo.save({
       rating: createRatingDto.rating,
       post: {
         id: createRatingDto.postId,
       },
       user: {
-        id: userId,
+        id: createRatingDto.userId,
       },
     });
   }

@@ -9,7 +9,7 @@
         <div class="form-group">
           <input
             id="firstName"
-            placeholder="First name"
+            placeholder="First name (3-20 characters)"
             type="text"
             formControlName="firstName"
           />
@@ -17,17 +17,29 @@
         <div class="form-group">
           <input
             id="lastName"
-            placeholder="Last name"
+            placeholder="Last name (3-20 characters)"
             type="text"
             formControlName="lastName"
           />
         </div>
         <div class="form-group">
-          <input placeholder="Email" type="text" formControlName="email" />
+          <input
+            id="username"
+            placeholder="Username (8-30 characters)"
+            type="text"
+            formControlName="username"
+          />
         </div>
         <div class="form-group">
           <input
-            placeholder="Password"
+            placeholder="Valid email"
+            type="text"
+            formControlName="email"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            placeholder="Password (8-30 characters)"
             type="password"
             formControlName="password"
           />
@@ -39,6 +51,12 @@
             formControlName="confirmPassword"
           />
         </div>
+        @if(registerForm.controls.confirmPassword.touched &&
+        registerForm.controls.confirmPassword.errors?.passwordMismatch) {
+        <p class="form-error">Passwords must match</p>
+        } @if(isSubmitted() && registerForm.invalid && registerForm.touched) {
+        <p class="form-error">All fields are required!</p>
+        }
         <div class="login-form-button-div">
           <button class="register-button" type="submit">Register</button>
         </div>

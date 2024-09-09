@@ -21,6 +21,11 @@
           <input class="remember" type="checkbox" />
         </div>
       </div>
+      <div>
+        @if(loginForm.invalid && isSubmitted() && loginForm.touched){
+        <p class="form-error">All fields are required</p>
+        }
+      </div>
       <div class="login-form-button-div">
         <button class="login-button" type="submit">Log in</button>
       </div>
