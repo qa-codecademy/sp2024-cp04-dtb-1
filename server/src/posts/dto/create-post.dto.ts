@@ -1,21 +1,18 @@
-import { IsString, IsNumber } from 'class-validator';
+import { IsString } from 'class-validator';
 
 export class CreatePostDto {
   @IsString()
   userId: string;
 
   @IsString()
+  image: string;
+
+  @IsString()
   title: string;
-
-  @IsNumber()
-  date: string;
-
-  @IsNumber()
-  rating: number;
 
   @IsString()
   text: string;
 
   @IsString()
-  author: string;
+  tags: string[];
 }

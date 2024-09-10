@@ -16,6 +16,8 @@ export class UsersService {
     return this.usersRepo.find({
       relations: {
         comments: true,
+        ratings: true,
+        posts: true,
       },
     });
   }

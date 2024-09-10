@@ -1,6 +1,12 @@
 import { Post } from 'src/posts/entities/post.entity';
 import { User } from 'src/users/entities/user.entity';
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  JoinColumn,
+} from 'typeorm';
 
 @Entity()
 export class Comment {
@@ -11,8 +17,10 @@ export class Comment {
   text: string;
 
   @ManyToOne(() => User, (user) => user.comments)
+  @JoinColumn()
   user: User;
 
   @ManyToOne(() => Post, (post) => post.comments)
+  @JoinColumn()
   post: Post;
 }

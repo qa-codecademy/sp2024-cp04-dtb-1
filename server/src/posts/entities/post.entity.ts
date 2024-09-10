@@ -8,6 +8,7 @@ import {
   ManyToOne,
   OneToMany,
   IntegerType,
+  JoinColumn,
 } from 'typeorm';
 
 @Entity()
@@ -19,15 +20,23 @@ export class Post {
   title: string;
 
   @Column()
+  image: string;
+
+  @Column()
   date: string;
 
   @Column()
   text: string;
 
-  @Column()
-  author: string;
+  @Column('text', {
+    array: true,
+    default: [],
+    nullable: true,
+  })
+  tags: string[];
 
   @ManyToOne(() => User, (user) => user.posts)
+  @JoinColumn({ name: 'userId' })
   user: User;
 
   @OneToMany(() => Comment, (comment) => comment.post)

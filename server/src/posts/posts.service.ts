@@ -11,7 +11,12 @@ export class PostService {
 
   create(createPostDto: CreatePostDto) {
     return this.postsRepo.save({
-      ...createPostDto,
+      text: createPostDto.text,
+      title: createPostDto.title,
+      tags: createPostDto.tags,
+      image: createPostDto.image,
+      date: String(new Date()),
+      user: { id: createPostDto.userId },
     });
   }
 
@@ -20,6 +25,7 @@ export class PostService {
       relations: {
         user: true,
         comments: true,
+        ratings: true,
       },
       select: {
         user: {
@@ -38,6 +44,7 @@ export class PostService {
       where: { id },
       relations: {
         comments: true,
+        ratings: true,
         user: true,
       },
       select: {
@@ -60,7 +67,7 @@ export class PostService {
   }
 
   async update(id: number, updatePostDto: UpdatePostDto) {
-    const foundPost = await this.findOne(id);
+    const foundPost = await this.postsRepo.findBy({ id });
 
     Object.assign(foundPost, updatePostDto);
 
@@ -68,7 +75,7 @@ export class PostService {
   }
 
   async remove(id: number) {
-    const foundPost = await this.findOne(id);
+    const foundPost = await this.postsRepo.findBy({ id });
 
     await this.postsRepo.remove(foundPost);
   }
