@@ -1,9 +1,6 @@
 [
   {
-    "id": 1,
     "title": "AI Breakthrough: GPT-5 Announced",
-    "author": "Alex Johnson",
-    "date": "2024-09-01",
     "image": "https://example.com/images/gpt5.jpg",
     "rating": [5, 5, 4, 5],
     "comments": [
@@ -16,14 +13,7 @@
   {
     "id": 2,
     "title": "The Rise of Quantum Computing",
-    "author": "Sophia Lee",
-    "date": "2024-09-02",
     "image": "https://example.com/images/quantumcomputing.jpg",
-    "rating": [4, 5, 5, 4],
-    "comments": [
-      "Quantum computing is the future!",
-      "Intriguing developments in this field."
-    ],
     "text": "Explore the latest advancements in quantum computing and how they could revolutionize industries from cryptography to drug discovery.",
     "tags": ["quantum computing", "technology", "innovation"]
   },

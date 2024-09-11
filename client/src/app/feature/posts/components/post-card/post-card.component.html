@@ -1,20 +1,17 @@
 <div class="container-post">
   <div class="item-post">
-    <img src="/images/post-images/post-photo-01.jpg" class="image-post" />
+    <img src="{{ post().image }}" class="image-post" />
     <div class="description-post">
-      <h2>AI Breakthrough: GPT-5 Announced</h2>
+      <h2>{{ post().title }}</h2>
       <p>
-        Designed with future technologies for the future experience by
-        considering every detail aspects. This innovative product ensures
-        optimal performance and ease of use, making it ideal for both beginners
-        and experts alike.
+        {{ post().text }}
       </p>
       <div class="post-button-container">
         <app-button class="button" text="Learn more..."></app-button>
         <div class="post-info-container">
-          <p>Ana Jovanoska</p>
+          <p>{{ post().user.firstName }} {{ post().user.lastName }}</p>
           <div class="post-info">
-            <p>08.09.2024</p>
+            <p>{{ post().date | date }}</p>
             <samp>5<i class="fa-regular fa-star"></i></samp>
           </div>
         </div>

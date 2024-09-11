@@ -1,1 +1,5 @@
-<p>posts-list works!</p>
+<div class="post-list">
+  @for (post of posts(); track post.id) {
+  <app-post-card [post]="post"></app-post-card>
+  }
+</div>

@@ -2,3 +2,46 @@
   display: grid;
   grid-template-columns: 70% 30%;
 }
+
+.home-post-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.post-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-ads-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+
+  img {
+    width: 250px;
+  }
+}
+
+.post-list-container-heading {
+  width: 300px;
+  background-color: var(--bg-grey);
+  height: max-content;
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  border-radius: 5px;
+
+  img {
+    width: 30px;
+  }
+
+  h2 {
+    font-size: 28px;
+    color: var(--font-color);
+    margin: 0;
+  }
+}

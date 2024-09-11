@@ -6,11 +6,18 @@ import { ContactComponent } from './feature/contact/contact.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { PostCardComponent } from './feature/posts/components/post-card/post-card.component';
 import { HomeComponent } from './feature/home/home.component';
+import { PostDetailsComponent } from './feature/posts/components/post-details/post-details.component';
+import { AuthGuard } from './core/guards';
 
 export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+  },
+  {
+    path: 'add-post',
+    component: PostDetailsComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'about',
