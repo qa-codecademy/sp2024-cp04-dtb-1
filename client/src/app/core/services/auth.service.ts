@@ -22,7 +22,7 @@ export class AuthService {
 
   registerUser(request: RegisterReq) {
     this.apiService.registerUser(request).subscribe({
-      next: (data) => {
+      next: () => {
         console.log('User registered');
         this.router.navigate(['login']);
       },

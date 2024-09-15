@@ -13,4 +13,8 @@ export class PostsApiService {
   fetchAllPosts() {
     return this.http.get<Post[]>(`${BASE_URL}/posts`);
   }
+
+  fetchPostById(postId: number) {
+    return this.http.get<Post>(`${BASE_URL}/posts/${postId}`);
+  }
 }

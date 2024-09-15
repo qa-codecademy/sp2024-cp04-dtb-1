@@ -7,9 +7,13 @@
         {{ post().text }}
       </p>
       <div class="post-button-container">
-        <app-button class="button" text="Learn more..."></app-button>
+        <app-button
+          class="button"
+          text="Learn more..."
+          (btnClick)="onLoadMoreClick()"
+        ></app-button>
         <div class="post-info-container">
-          <p>{{ post().user.firstName }} {{ post().user.lastName }}</p>
+          <p>{{ post().user.username }}</p>
           <div class="post-info">
             <p>{{ post().date | date }}</p>
             <samp>5<i class="fa-regular fa-star"></i></samp>

@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, model, signal } from '@angular/core';
 import { PostsListComponent } from '../posts/components/posts-list/posts-list.component';
-import { TrandingPostsListComponent } from '../posts/components/tranding-posts-list/tranding-posts-list.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [PostsListComponent, TrandingPostsListComponent],
+  imports: [PostsListComponent, CommonModule, FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  searchValue = model<string>('');
+}

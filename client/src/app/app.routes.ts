@@ -15,9 +15,8 @@ export const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'add-post',
+    path: 'post-details/:id',
     component: PostDetailsComponent,
-    canActivate: [AuthGuard],
   },
   {
     path: 'about',

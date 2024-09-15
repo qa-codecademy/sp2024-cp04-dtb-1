@@ -1,5 +1,5 @@
 <div class="post-list">
-  @for (post of posts(); track post.id) {
+  @for (post of posts() | search: searchValue(); track post.id) {
   <app-post-card [post]="post"></app-post-card>
   }
 </div>
