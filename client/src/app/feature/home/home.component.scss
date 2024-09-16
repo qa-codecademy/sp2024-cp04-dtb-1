@@ -1,6 +1,6 @@
 .home-page {
   display: grid;
-  grid-template-columns: 70% 25%;
+  grid-template-columns: 75% 25%;
 }
 
 .search-filters-container {
@@ -10,6 +10,7 @@
 
 .home-post-list-container {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   padding: 0 0 0 160px;
   gap: 20px;

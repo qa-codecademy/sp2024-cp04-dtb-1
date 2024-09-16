@@ -12,7 +12,6 @@ import {
 } from '@nestjs/common';
 import { CommentsService } from './comments.service';
 import { CreateCommentDto } from './dto/create-comment.dto';
-
 import { AuthGuard } from 'src/auth/auth.guard';
 import { GetCommentsQuery } from './comments.model';
 
