@@ -4,6 +4,7 @@ import { UpdatePostDto } from './dto/update-post.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Post } from './entities/post.entity';
 import { Repository } from 'typeorm';
+import { GetPostsQuery } from './posts.mode';
 
 @Injectable()
 export class PostService {
@@ -20,13 +21,18 @@ export class PostService {
     });
   }
 
-  async findAll() {
-    return this.postsRepo.find({
+  async findAll(query: GetPostsQuery) {
+    const posts = await this.postsRepo.find({
       relations: {
         user: true,
         comments: true,
         ratings: true,
       },
+      order: {
+        date: 'ASC',
+      },
+      skip: query.firstResult ? Number(query.firstResult) - 1 : 0,
+      take: Number(query.maxResults) || 10,
       select: {
         user: {
           id: true,
@@ -37,6 +43,13 @@ export class PostService {
         },
       },
     });
+
+    const totalCount = await this.postsRepo.count();
+
+    return {
+      posts,
+      totalCount,
+    };
   }
 
   async findOne(id: number) {

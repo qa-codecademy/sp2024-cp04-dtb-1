@@ -9,11 +9,13 @@ import {
   UseGuards,
   UseInterceptors,
   ClassSerializerInterceptor,
+  Query,
 } from '@nestjs/common';
 import { PostService } from './posts.service';
 import { CreatePostDto } from './dto/create-post.dto';
 import { UpdatePostDto } from './dto/update-post.dto';
 import { AuthGuard } from 'src/auth/auth.guard';
+import { GetPostsQuery } from './posts.mode';
 
 @UseInterceptors(ClassSerializerInterceptor)
 @Controller('posts')
@@ -27,8 +29,8 @@ export class PostsController {
   }
 
   @Get()
-  findAll() {
-    return this.postsService.findAll();
+  findAll(@Query() query: GetPostsQuery) {
+    return this.postsService.findAll(query);
   }
 
   @Get(':id')

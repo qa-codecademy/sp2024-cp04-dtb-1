@@ -23,4 +23,11 @@
       </p>
     </div>
   </div>
+  <app-comment-form (commentOutput)="onAddComment($event)" />
+  @if(comments().length){
+  <app-comment-list [comments]="comments()" />
+  }
+  <div class="load-more-button-container">
+    <app-button text="Load more" (btnClick)="onLoadmore()" />
+  </div>
 </div>

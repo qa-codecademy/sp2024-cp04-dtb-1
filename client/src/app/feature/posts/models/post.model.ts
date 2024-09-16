@@ -12,6 +12,25 @@ export interface Post {
   user: User;
 }
 
+export interface GetPostResponse {
+  posts: Post[];
+  totalCount: number;
+}
+
+export interface PostComment {
+  id: number;
+  text: string;
+  date: string;
+  user: {
+    username: string;
+  };
+}
+
+export interface GetPostCommentsResponse {
+  comments: PostComment[];
+  totalCount: number;
+}
+
 export interface PostRequest {
   title: string;
   text: string;

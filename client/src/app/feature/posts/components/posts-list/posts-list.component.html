@@ -1,5 +1,12 @@
-<div class="post-list">
-  @for (post of posts() | search: searchValue(); track post.id) {
-  <app-post-card [post]="post"></app-post-card>
-  }
-</div>
+<section class="post-list-container">
+  <div class="post-list">
+    @for (post of posts() | search: searchValue(); track post.id) {
+    <app-post-card [post]="post"></app-post-card>
+    }
+  </div>
+  <div class="load-more-button-container">
+    @if(maxPages() !== currentPage() && maxPages() > 1){
+    <app-button text="Load more" (btnClick)="onLoadMore()" />
+    }
+  </div>
+</section>

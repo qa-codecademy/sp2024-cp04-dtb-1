@@ -23,4 +23,7 @@ export class Comment {
   @ManyToOne(() => Post, (post) => post.comments)
   @JoinColumn()
   post: Post;
+
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
+  date: string;
 }
