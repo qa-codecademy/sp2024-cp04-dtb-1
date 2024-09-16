@@ -5,47 +5,49 @@
 }
 
 .forms-container {
-  width: 350px;
-  height: 550px;
-  background-color: var(--bg-grey);
+  width: 400px;
+  height: 570px;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  border-radius: 5px;
+  border-radius: 8px;
   padding: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
   .logo-image,
+  img {
+    width: 100px;
+  }
+
   p {
     text-align: center;
   }
 }
 
 .forms-register-container {
-  width: 350px;
-  height: 650px;
-  background-color: var(--bg-grey);
+  width: 400px;
+  height: 600px;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
-  border-radius: 5px;
-  padding: 20px;
+  border-radius: 8px;
+  padding: 30px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
-  .logo-image,
   p {
     text-align: center;
   }
 }
 
 .heading {
-  font-size: 35px;
-  font-weight: 100;
+  font-size: 25px;
+  font-weight: 300;
   line-height: 1.2;
   margin: 0 0 25px 0;
-  color: var(--font-color);
+  color: black;
   text-transform: inherit;
   letter-spacing: inherit;
   text-align: center;
@@ -59,23 +61,27 @@
 
 .form-group {
   display: flex;
-  color: var(--font-color);
+  color: black;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
 
   input {
-    width: 200px;
-    padding: 5px;
-    height: 35px;
+    width: 270px;
+    padding: 10px;
+    height: 40px;
     border: 1px solid grey;
     border-radius: 5px;
+
+    &:focus {
+      border-color: var(--bg-grey);
+      outline: none;
+    }
   }
 }
 
 .form-login-remember {
-  height: 20px;
+  height: 2s0px;
   color: var(--font-color);
   display: flex;
   justify-content: center;
@@ -88,26 +94,27 @@
   align-items: center;
 
   label {
-    color: var(--font-color);
+    color: black;
+    font-size: 13px;
+    font-weight: 400;
   }
 
   input {
-    margin-left: 10px;
     cursor: pointer;
   }
 }
 
 .login-form-button-div {
-  height: 60px;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
 
   button {
-    width: 130px;
-    height: 35px;
+    width: 150px;
+    height: 40px;
     border-radius: 5px;
-    border: 1px solid var(--border-hover-color);
+    border: 1px solid #fff;
     color: var(--font-color);
     background-color: var(--bg-grey);
     cursor: pointer;
@@ -121,17 +128,20 @@
 .form-message {
   display: flex;
   justify-content: center;
-  padding: 5px;
-  gap: 10px;
+  gap: 5px;
   font-size: 14px;
-  color: var(--font-color);
+  font-weight: 400;
+  color: black;
 
   a {
-    color: var(--font-color);
+    color: darkblue;
   }
 }
 
 .form-error {
   color: var(--error);
   text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  padding-top: 5px;
 }
