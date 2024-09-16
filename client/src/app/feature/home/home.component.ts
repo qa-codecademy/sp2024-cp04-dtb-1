@@ -1,4 +1,4 @@
-import { Component, model, signal } from '@angular/core';
+import { Component, model } from '@angular/core';
 import { PostsListComponent } from '../posts/components/posts-list/posts-list.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';

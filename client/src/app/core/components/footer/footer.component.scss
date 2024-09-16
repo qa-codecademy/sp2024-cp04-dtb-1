@@ -1,16 +1,20 @@
 #footer {
-  background-color: var(--bg-grey);
-  border-color: var(--bg-color);
+  background: linear-gradient(
+    114.9deg,
+    rgb(34, 34, 34) 8.3%,
+    rgb(0, 40, 60) 41.6%,
+    rgb(0, 143, 213) 93.4%
+  );
+  border-color: #fff;
   border-top-left-radius: 44%;
   border-top-style: groove;
   font-size: 16px;
-  color: var(--font-color);
+  color: #fff;
   display: flex;
   flex-direction: column;
   width: 100%;
-  border-top: 2.5px solid var(--border-hover-color);
+  border-top: 2.5px solid #fff;
 }
-
 menu {
   h2 {
     margin: 0;
@@ -25,7 +29,6 @@ li {
   width: 300px;
   margin-bottom: 10px;
 }
-
 .footer-section {
   display: flex;
   flex-direction: row;
@@ -35,7 +38,6 @@ li {
   max-width: 800px;
   padding: 20px 10px 0 10px;
 }
-
 .social-links {
   display: flex;
   flex-direction: row;
@@ -45,24 +47,20 @@ li {
   width: 20px;
   height: 20px;
 }
-
 .footer-contact-link {
   cursor: pointer;
 }
-
 .footer-about-link {
   cursor: pointer;
 }
-
 a {
-  color: var(--font-color);
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
 }
 a:hover {
   color: var(--border-hover-color);
 }
-
 .infothree {
   display: flex;
   flex-direction: row;
@@ -76,7 +74,7 @@ a:hover {
   opacity: 0.7;
 }
 .footer-botom {
-  background-color: var(--border-hover-color);
+  background-color: #fff;
   min-height: 30px;
   margin-top: 15px;
   display: flex;
@@ -91,15 +89,12 @@ a:hover {
 .footer-botom a {
   color: var(--bg-color);
 }
-
 .address {
   padding-left: 10px;
 }
-
 .social-links {
   padding-left: 10px;
 }
-
 .social-links h2 {
   text-align: left;
   color: var(--font-color);

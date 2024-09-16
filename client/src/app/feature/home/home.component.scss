@@ -1,12 +1,9 @@
 .home-page {
   display: grid;
-  grid-template-columns: 80% 20%;
+  grid-template-columns: 70% 25%;
 }
 
 .search-filters-container {
-  background-color: var(--bg-grey);
-  border-radius: 5px;
-  padding: 25px;
   display: flex;
   justify-content: space-between;
 }
@@ -14,30 +11,31 @@
 .home-post-list-container {
   display: flex;
   flex-direction: column;
-  padding: 0 0 0 150px;
-  gap: 30px;
+  padding: 0 0 0 160px;
+  gap: 20px;
 }
 
 .post-list-container {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 60px;
 }
 
 .home-ads-container {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 10px;
+  gap: 15px;
+  padding-bottom: 50px;
 
   img {
-    width: 250px;
+    width: 300px;
+    border-radius: 7px;
   }
 }
 
 .post-list-container-heading {
   width: 300px;
-  background-color: var(--bg-grey);
   height: max-content;
   display: flex;
   gap: 5px;
@@ -52,6 +50,7 @@
     font-size: 28px;
     color: var(--font-color);
     margin: 0;
+    font-weight: 300;
   }
 }
 
@@ -76,19 +75,19 @@
 }
 
 .search-input {
-  width: 300px;
+  width: 450px;
   height: 35px;
-  transition: width 0.3s ease-in-out;
-  padding: 10px 20px 10px 40px;
+  transition: width 0.4s ease-in-out;
+  padding: 20px 30px 20px 35px;
   border: 2px solid var(--bg-light);
-  border-radius: 15px;
-  background-color: var(--bg-grey);
-  color: var(--bg-color);
+  border-radius: 8px;
+  background-color: #fff;
+  color: black;
 }
 
 .search-input:focus {
-  width: 400px;
+  width: 900px;
   outline: none;
-  color: var(--font-color);
+  color: black;
   border: 2px solid var(--bg-light);
 }
