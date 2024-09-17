@@ -1,19 +1,17 @@
-.button {
-  width: 120px;
-  height: 40px;
-  background-color: var(--bg-grey);
-  color: var(--bg-blue);
-  border: 0.5px solid var(--bg-light);
-  border-radius: 3px;
+button {
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--font-color);
+  border: 1px solid #e9ecef;
+  color: #343a40;
+  background-color: #e9ecef;
+  min-width: 150px;
+  box-shadow: 0 5px 5px #d0d3ca, 0 5px 5px #d0d3ca;
 
   &:hover {
-    border: 0.5px solid var(--bg-grey);
-    transform: translate(1px, -1px);
-    transition: 0.3s ease-in-out;
-    background-color: var(--border-hover-color);
+    background-color: #b7c4cf;
+    border: 1px solid #b7c4cf;
+    box-shadow: 0 3px 3px #d0d3ca, 0 3px 3px #d0d3ca;
   }
 }

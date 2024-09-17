@@ -1,5 +1,8 @@
 <section class="forms-page">
   <div class="forms-register-container">
+    <div class="logo-image">
+      <img src="/images/only logo.png" alt="Logo" width="138" />
+    </div>
     <div class="signin-card">
       <h1 class="heading">Register</h1>
       <form class="form" [formGroup]="registerForm" (ngSubmit)="onFormSubmit()">
@@ -28,7 +31,7 @@
         <p class="form-error">All fields are required!</p>
         }
         <div class="login-form-button-div">
-          <button class="register-button" type="submit">Register</button>
+          <app-button text="Register" class="register-button" type="submit" />
         </div>
         <div class="form-message">
           Already have an account?

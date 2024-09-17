@@ -44,20 +44,6 @@
   text-align: justify;
 }
 
-.about-read-more-button {
-  border: none;
-  outline: 0;
-  padding: 10px;
-  margin: 2rem;
-  font-size: 1rem;
-  color: white;
-  background-color: var(--bg-grey);
-  text-align: center;
-  cursor: pointer;
-  width: 15rem;
-  border-radius: 4px;
-}
-
 /* Team Section */
 
 .team {
@@ -81,7 +67,6 @@
 
 .card {
   background-color: white;
-  border-radius: 6px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -124,22 +109,4 @@
 .card-email {
   font-size: 1rem;
   color: #555;
-}
-
-.button {
-  border: none;
-  outline: 0;
-  padding: 10px;
-  margin: 2rem;
-  font-size: 1rem;
-  color: white;
-  background-color: var(--bg-light);
-  text-align: center;
-  cursor: pointer;
-  width: 15rem;
-  border-radius: 4px;
-}
-
-button:hover {
-  background-color: var(--bg-grey);
 }

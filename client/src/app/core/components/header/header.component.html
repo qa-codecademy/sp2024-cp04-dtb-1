@@ -4,12 +4,12 @@
   </div>
   <nav class="Navbar">
     <ul>
-      <li><a routerLink="/">Posts</a></li>
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Posts</a></li>
       @if(currentUser()){
-      <li><a routerLink="/add-post">Add post</a></li>
+      <li><a routerLink="/add-post" routerLinkActive="active">Add post</a></li>
       }
-      <li><a routerLink="/about">About</a></li>
-      <li><a routerLink="/contact">Contact</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
 
       @if(currentUser()){
       <li class="dropdown">
@@ -19,13 +19,13 @@
           <i class="fa fa-caret-down"></i>
         </div>
         <div class="dropdown-content">
-          <a (click)="onLogOutClick()">Logout</a>
+          <a (click)="onLogOutClick()" routerLinkActive="active">Logout</a>
         </div>
       </li>
       } @else {
-      <li><a routerLink="/login">Login</a></li>
+      <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
       }
-      <li><i class="fa-solid fa-lightbulb"></i></li>
+      <li routerLinkActive="active"><i class="fa-solid fa-lightbulb"></i></li>
     </ul>
   </nav>
 </header>

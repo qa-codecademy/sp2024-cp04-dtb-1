@@ -9,11 +9,12 @@ import {
 import { RouterLink } from '@angular/router';
 import { RegisterReq } from '../../models/auth.model';
 import { AuthService } from '../../../../core/services/auth.service';
+import { ButtonComponent } from '../../../../shared/button/button.component';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, ButtonComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',
 })
