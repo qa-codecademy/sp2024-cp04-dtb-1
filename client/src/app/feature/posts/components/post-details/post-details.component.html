@@ -1,10 +1,22 @@
 <div class="container_page">
   <div class="post-page-header-container">
-    <h2 class="post-page-hader-h2">{{ post().title }}</h2>
-    <small
-      >{{ post().date | date : "longDate" }} by
-      {{ post().user.username }}</small
-    >
+    <div>
+      <h2 class="post-page-hader-h2">{{ post().title }}</h2>
+      <small
+        >{{ post().date | date : "longDate" }} by
+        {{ post().user.username }}</small
+      >
+    </div>
+    @if(currentUser().id === post().user.id){
+    <div class="post-button-controls-container">
+      <button class="edit-button">
+        <i class="fa-regular fa-pen-to-square"></i>
+      </button>
+      <button class="delete-button" (click)="onDeletePost()">
+        <i class="fa-solid fa-trash"></i>
+      </button>
+    </div>
+    }
   </div>
   <div>
     <div class="post-page-image-div-container">
@@ -21,6 +33,11 @@
           tag
         }}, }
       </p>
+      @if(currentUser()){
+      <div class="rating-container">
+        <app-rating-form-panel></app-rating-form-panel>
+      </div>
+      }
     </div>
   </div>
   <div class="post-comments-container">

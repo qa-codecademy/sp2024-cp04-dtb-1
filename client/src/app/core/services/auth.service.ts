@@ -6,6 +6,7 @@ import {
 } from '../../feature/auth/models/auth.model';
 import { AuthApiService } from './auth-api.service';
 import { Router } from '@angular/router';
+import { tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -35,10 +36,9 @@ export class AuthService {
       next: (response) => {
         const token = response.headers.get('access-token');
 
-        console.log(token);
-        console.log(response.body);
+        const refreshToken = response.headers.get('refresh-token');
 
-        this.currentUser.set({ ...response.body, token });
+        this.currentUser.set({ ...response.body, token, refreshToken });
 
         this.saveCurrentUserToLocalStorage(this.currentUser());
 
@@ -60,9 +60,30 @@ export class AuthService {
     this.currentUser.set(JSON.parse(currentUserJSON));
   }
 
+  logOutUserFromServer() {
+    this.apiService.logOutUser(this.currentUser().refreshToken).subscribe();
+  }
+
   logOutUser() {
     this.currentUser.set(null);
     localStorage.clear();
     this.router.navigate(['login']);
+  }
+
+  refreshAccessToken(refreshToken: string) {
+    return this.apiService.refreshAccessToken(refreshToken).pipe(
+      tap((response) => {
+        const token = response.headers.get('access-token');
+        const refreshToken = response.headers.get('refresh-token');
+
+        this.currentUser.update((prev) => ({
+          ...prev,
+          token,
+          refreshToken,
+        }));
+
+        this.saveCurrentUserToLocalStorage(this.currentUser());
+      })
+    );
   }
 }

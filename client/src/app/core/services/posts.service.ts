@@ -60,4 +60,13 @@ export class PostsService {
       error: (error) => console.log(error),
     });
   }
+
+  deletePost(postId: number) {
+    this.apiService.deletePost(postId).subscribe({
+      next: () => {
+        console.log('post deleted');
+      },
+      error: (error) => console.log(error),
+    });
+  }
 }

@@ -18,6 +18,8 @@
 .post-page-header-container {
   padding: 20px 200px;
   font-size: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .post-page-image-div-container {
@@ -43,4 +45,44 @@
 .load-more-button-container {
   display: flex;
   justify-content: center;
+}
+
+.post-button-controls-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.edit-button {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  background-color: transparent;
+  color: var(--font-color);
+  border: none;
+
+  &:hover {
+    color: var(--border-hover-color);
+    cursor: pointer;
+  }
+}
+
+.delete-button {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  background-color: transparent;
+  color: var(--font-color);
+  border: none;
+
+  &:hover {
+    color: var(--error);
+    cursor: pointer;
+  }
+}
+
+.rating-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
 }

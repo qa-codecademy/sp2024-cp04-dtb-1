@@ -3,7 +3,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Rating } from './entities/rating.entity';
 import { Repository } from 'typeorm';
 import { CreateRatingDto } from './dto/create-rating.dto';
-import { UpdateRatingDto } from './dto/update-rating.dto';
 
 @Injectable()
 export class RatingsService {

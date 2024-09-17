@@ -1,11 +1,12 @@
 import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { PostsService } from '../../../../core/services/posts.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { CommentFormComponent } from '../comment-form/comment-form.component';
 import { CommentListComponent } from '../comment-list/comment-list.component';
 import { ButtonComponent } from '../../../../shared/button/button.component';
 import { AuthService } from '../../../../core/services/auth.service';
+import { RatingFormPanelComponent } from '../../../../shared/rating-form-panel/rating-form-panel.component';
 
 @Component({
   selector: 'app-post-details',
@@ -15,12 +16,14 @@ import { AuthService } from '../../../../core/services/auth.service';
     CommentFormComponent,
     CommentListComponent,
     ButtonComponent,
+    RatingFormPanelComponent,
   ],
   templateUrl: './post-details.component.html',
   styleUrl: './post-details.component.scss',
 })
 export class PostDetailsComponent implements OnInit {
   private route = inject(ActivatedRoute);
+  private router = inject(Router);
   private postsService = inject(PostsService);
   private authService = inject(AuthService);
 
@@ -44,6 +47,12 @@ export class PostDetailsComponent implements OnInit {
       this.post().id,
       text
     );
+  }
+
+  onDeletePost() {
+    this.postsService.deletePost(this.post().id);
+
+    this.router.navigate(['/']);
   }
 
   onLoadmore() {

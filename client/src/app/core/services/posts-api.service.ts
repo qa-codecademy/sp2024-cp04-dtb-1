@@ -42,4 +42,8 @@ export class PostsApiService {
   postComment(userId: string, postId: number, text: string) {
     return this.http.post(`${BASE_URL}/comments`, { userId, postId, text });
   }
+
+  deletePost(postId: number) {
+    return this.http.delete(`${BASE_URL}/posts/${postId}`);
+  }
 }
