@@ -28,6 +28,7 @@ export class PostsService {
     this.apiService.fetchPostById(postId).subscribe({
       next: (res) => {
         this.selectedPost.set(res);
+        this.comments.set([]);
         this.getPostComments(postId);
       },
       error: (error) => console.log(error),

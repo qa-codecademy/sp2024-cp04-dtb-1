@@ -28,6 +28,7 @@ export class PostsListComponent implements OnInit {
   currentPage = signal(1);
 
   ngOnInit(): void {
+    this.posts.set([]);
     this.postsService.getPosts();
   }
 

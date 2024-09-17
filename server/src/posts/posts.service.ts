@@ -79,6 +79,24 @@ export class PostService {
     return foundPost;
   }
 
+  async getRatingByPost(postId: number) {
+    const foundRatings = await this.postsRepo.findOne({
+      where: { id: postId },
+      relations: {
+        ratings: true,
+      },
+      select: {
+        ratings: {
+          rating: true,
+        },
+      },
+    });
+
+    if (!foundRatings) throw new NotFoundException('Post ratings not found');
+
+    return foundRatings;
+  }
+
   async update(id: number, updatePostDto: UpdatePostDto) {
     const foundPost = await this.postsRepo.findBy({ id });
 

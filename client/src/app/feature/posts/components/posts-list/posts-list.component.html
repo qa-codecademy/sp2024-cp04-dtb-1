@@ -5,8 +5,8 @@
     }
   </div>
   <div class="load-more-button-container">
-    @if(maxPages() !== currentPage() && maxPages() > 1){
+    @if(maxPages() !== currentPage() && maxPages() > 1){ @if(!searchValue()){
     <app-button text="Load more" (btnClick)="onLoadMore()" />
-    }
+    } }
   </div>
 </section>
