@@ -29,6 +29,7 @@ export class PostDetailsComponent implements OnInit {
 
   currentUser = this.authService.currentUser;
   post = this.postsService.selectedPost;
+  rating = this.postsService.selectedRating;
   comments = this.postsService.comments;
   commentsTotalCount = this.postsService.commentsTotalCount;
   currentPage = signal(1);
@@ -38,6 +39,7 @@ export class PostDetailsComponent implements OnInit {
     const postId = this.route.snapshot.params.id;
 
     this.postsService.getPostById(postId);
+    this.postsService.findRatingByUserAndPost(this.currentUser().id, postId);
   }
 
   onAddComment(text: string) {
@@ -62,6 +64,14 @@ export class PostDetailsComponent implements OnInit {
       this.post().id,
       (this.currentPage() - 1) * 10 + 1,
       10
+    );
+  }
+
+  onChangeRating(rating: number) {
+    this.postsService.createPostRating(
+      this.currentUser().id,
+      this.post().id,
+      rating
     );
   }
 }

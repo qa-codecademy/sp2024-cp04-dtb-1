@@ -1,7 +1,6 @@
-import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { RatingsService } from './ratings.service';
 import { CreateRatingDto } from './dto/create-rating.dto';
-import { UpdateRatingDto } from './dto/update-rating.dto';
 
 @Controller('ratings')
 export class RatingsController {
@@ -20,6 +19,14 @@ export class RatingsController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.ratingsService.findOne(+id);
+  }
+
+  @Get('/user/:id/post/:postId')
+  findRatingByUserAndPost(
+    @Param('id') userId: string,
+    @Param('postId') postId: number,
+  ) {
+    return this.ratingsService.findRatingByUserAndPost(userId, postId);
   }
 
   //   @Patch(':id')

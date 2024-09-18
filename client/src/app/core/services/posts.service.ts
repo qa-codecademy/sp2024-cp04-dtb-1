@@ -1,6 +1,10 @@
 import { inject, Injectable, OnInit, signal } from '@angular/core';
 import { PostsApiService } from './posts-api.service';
-import { Post, PostComment } from '../../feature/posts/models/post.model';
+import {
+  Post,
+  PostComment,
+  PostRating,
+} from '../../feature/posts/models/post.model';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +15,7 @@ export class PostsService {
   posts = signal<Post[]>([]);
   totalPostCount = signal<number>(0);
   selectedPost = signal<Post>(null);
+  selectedRating = signal<number>(0);
   commentsTotalCount = signal(0);
   comments = signal<PostComment[]>([]);
 
@@ -28,8 +33,18 @@ export class PostsService {
     this.apiService.fetchPostById(postId).subscribe({
       next: (res) => {
         this.selectedPost.set(res);
+        this.selectedRating.set(0);
         this.comments.set([]);
         this.getPostComments(postId);
+      },
+      error: (error) => console.log(error),
+    });
+  }
+
+  deletePost(postId: number) {
+    this.apiService.deletePost(postId).subscribe({
+      next: () => {
+        console.log('post deleted');
       },
       error: (error) => console.log(error),
     });
@@ -61,10 +76,20 @@ export class PostsService {
     });
   }
 
-  deletePost(postId: number) {
-    this.apiService.deletePost(postId).subscribe({
+  createPostRating(userId: string, postId: number, rating: number) {
+    this.apiService.postRating(userId, postId, rating).subscribe({
       next: () => {
-        console.log('post deleted');
+        console.log('Rating added');
+      },
+      error: (error) => console.log(error),
+    });
+  }
+
+  findRatingByUserAndPost(userId: string, postId: number) {
+    this.apiService.getRatingByUserAndPost(userId, postId).subscribe({
+      next: (value) => {
+        console.log(value);
+        this.selectedRating.set(value.rating);
       },
       error: (error) => console.log(error),
     });

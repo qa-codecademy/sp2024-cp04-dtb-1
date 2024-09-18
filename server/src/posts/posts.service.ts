@@ -68,6 +68,16 @@ export class PostService {
           email: true,
           username: true,
         },
+        ratings: {
+          id: true,
+          rating: true,
+          user: {
+            id: true,
+          },
+          post: {
+            id: true,
+          },
+        },
       },
     });
 
@@ -84,10 +94,18 @@ export class PostService {
       where: { id: postId },
       relations: {
         ratings: true,
+        comments: true,
+        user: true,
       },
       select: {
         ratings: {
           rating: true,
+          user: {
+            id: true,
+          },
+          post: {
+            id: true,
+          },
         },
       },
     });

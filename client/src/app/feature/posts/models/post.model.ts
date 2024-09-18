@@ -7,9 +7,16 @@ export interface Post {
   image: string;
   date: string;
   tags: string[];
-  ratings: number[];
+  ratings: PostRating[];
   comments: string[];
   user: User;
+}
+
+export interface PostRating {
+  id: number;
+  user: User;
+  post: Post;
+  rating: number;
 }
 
 export interface GetPostResponse {

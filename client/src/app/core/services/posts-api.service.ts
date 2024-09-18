@@ -5,6 +5,7 @@ import {
   GetPostCommentsResponse,
   GetPostResponse,
   Post,
+  PostRating,
 } from '../../feature/posts/models/post.model';
 
 @Injectable({
@@ -27,6 +28,10 @@ export class PostsApiService {
     return this.http.get<Post>(`${BASE_URL}/posts/${postId}`);
   }
 
+  deletePost(postId: number) {
+    return this.http.delete(`${BASE_URL}/posts/${postId}`);
+  }
+
   fetchPostComments(postId: number, firstResult: number, maxResults: number) {
     return this.http.get<GetPostCommentsResponse>(
       `${BASE_URL}/comments/posts/${postId}`,
@@ -43,7 +48,17 @@ export class PostsApiService {
     return this.http.post(`${BASE_URL}/comments`, { userId, postId, text });
   }
 
-  deletePost(postId: number) {
-    return this.http.delete(`${BASE_URL}/posts/${postId}`);
+  postRating(userId: string, postId: number, rating: number) {
+    return this.http.post(`${BASE_URL}/ratings/add-rating`, {
+      userId,
+      postId,
+      rating,
+    });
+  }
+
+  getRatingByUserAndPost(userId: string, postId: number) {
+    return this.http.get<PostRating>(
+      `${BASE_URL}/ratings/user/${userId}/post/${postId}`
+    );
   }
 }

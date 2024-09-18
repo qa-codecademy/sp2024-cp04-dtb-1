@@ -1,4 +1,4 @@
-import { Component, inject, input } from '@angular/core';
+import { Component, inject, input, OnInit, signal } from '@angular/core';
 import { ButtonComponent } from '../../../../shared/button/button.component';
 import { Post } from '../../models/post.model';
 import { CommonModule } from '@angular/common';
@@ -11,9 +11,24 @@ import { Router } from '@angular/router';
   templateUrl: './post-card.component.html',
   styleUrl: './post-card.component.scss',
 })
-export class PostCardComponent {
+export class PostCardComponent implements OnInit {
   private router = inject(Router);
   post = input.required<Post>();
+
+  postRating = signal<number>(0);
+
+  ngOnInit(): void {
+    this.calucaltePostRating();
+  }
+
+  calucaltePostRating() {
+    const rating =
+      this.post()
+        .ratings.map((rating) => rating.rating)
+        .reduce((a, b) => a + b) / this.post().ratings.length;
+
+    this.postRating.set(rating);
+  }
 
   onLoadMoreClick() {
     this.router.navigate([`post-details/${this.post().id}`]);

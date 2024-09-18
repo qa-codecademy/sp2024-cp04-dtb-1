@@ -7,11 +7,11 @@ button {
   color: #343a40;
   background-color: #e9ecef;
   min-width: 150px;
-  box-shadow: 0 5px 5px #d0d3ca, 0 5px 5px #d0d3ca;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
   &:hover {
     background-color: #b7c4cf;
     border: 1px solid #b7c4cf;
-    box-shadow: 0 3px 3px #d0d3ca, 0 3px 3px #d0d3ca;
+    transform: translateY(-2px);
   }
 }

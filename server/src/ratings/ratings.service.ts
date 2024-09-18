@@ -3,14 +3,38 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Rating } from './entities/rating.entity';
 import { Repository } from 'typeorm';
 import { CreateRatingDto } from './dto/create-rating.dto';
+import { UsersService } from 'src/users/users.service';
 
 @Injectable()
 export class RatingsService {
   constructor(
     @InjectRepository(Rating) private ratingRepo: Repository<Rating>,
+    private usersService: UsersService,
   ) {}
 
-  create(createRatingDto: CreateRatingDto) {
+  async findAll() {
+    return this.ratingRepo.find({
+      relations: {
+        user: true,
+        post: true,
+      },
+    });
+  }
+
+  async create(createRatingDto: CreateRatingDto) {
+    const foundRatingByUser = await this.ratingRepo.findOneBy({
+      user: {
+        id: createRatingDto.userId,
+      },
+      post: {
+        id: createRatingDto.postId,
+      },
+    });
+
+    if (foundRatingByUser) {
+      this.ratingRepo.remove(foundRatingByUser);
+    }
+
     return this.ratingRepo.save({
       rating: createRatingDto.rating,
       post: {
@@ -22,8 +46,19 @@ export class RatingsService {
     });
   }
 
-  findAll() {
-    return this.ratingRepo.find({});
+  async findRatingByUserAndPost(userId: string, postId: number) {
+    const foundRating = await this.ratingRepo.findOneBy({
+      user: {
+        id: userId,
+      },
+      post: {
+        id: postId,
+      },
+    });
+
+    console.log(foundRating);
+
+    return foundRating;
   }
 
   findOne(id: number) {

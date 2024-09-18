@@ -39,8 +39,6 @@ export class RatingFormPanelComponent {
   ngOnInit() {
     if (this.startingValue()) this.currentValue.set(this.startingValue());
 
-    console.log(this.currentValue());
-
     this.generateRatings();
   }
 

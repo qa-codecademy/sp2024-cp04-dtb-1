@@ -35,7 +35,10 @@
       </p>
       @if(currentUser()){
       <div class="rating-container">
-        <app-rating-form-panel></app-rating-form-panel>
+        <app-rating-form-panel
+          [startingValue]="rating()"
+          (ratingOutput)="onChangeRating($event)"
+        ></app-rating-form-panel>
       </div>
       }
     </div>
