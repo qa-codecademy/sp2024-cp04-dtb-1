@@ -1,22 +1,25 @@
 .to-top {
-  width: 50px;
-  height: 30px;
-  background-color: var(--bg-grey);
-  color: var(--font-color);
-  border: 0.1px solid var(--border-hover-color);
-  border-radius: 3px;
+  border: 1px solid #e9ecef;
+  color: #343a40;
+  background-color: #e9ecef;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  margin: 0 3px 85px 0;
+  margin: 0 50px 50px 0;
   padding: 5px;
   position: fixed;
   bottom: 0;
   right: 0;
   opacity: 0;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 15px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
   &:hover {
-    border: 1px solid black;
+    background-color: #b7c4cf;
+    border: 1px solid #b7c4cf;
+    transform: translateY(-2px);
   }
 }
 

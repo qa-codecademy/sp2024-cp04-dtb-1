@@ -6,8 +6,8 @@
 
 .item-post {
   width: 600px;
-  height: 430px;
-  background: var(--bg-grey);
+  height: 500px;
+  background: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
@@ -16,7 +16,7 @@
 }
 
 .image-post {
-  height: 250px;
+  height: 290px;
   width: 600px;
 }
 
@@ -28,7 +28,7 @@
   h2,
   p {
     margin: 0;
-    color: var(--font-color);
+    color: #333;
   }
 }
 .post-info {
@@ -41,9 +41,8 @@
     margin: 0;
   }
   samp {
-    display: flex;
-    align-items: center;
-    color: yellow;
+    font-size: 15px;
+    color: #ffa534;
   }
 }
 
@@ -53,5 +52,5 @@
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  padding-top: 15px;
+  padding-top: 30px;
 }

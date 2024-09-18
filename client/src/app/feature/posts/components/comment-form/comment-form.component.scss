@@ -1,14 +1,24 @@
 .comment-form {
-  border-bottom: 2px solid rgb(205, 205, 205);
-  padding-bottom: 30px;
-  margin-bottom: 30px;
-
   textarea {
-    width: 500px;
-    padding: 5px;
+    border-radius: 8px;
+    width: 650px;
+    padding: 15px;
     font-size: 16px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.3);
     resize: vertical;
+    color: #ffffff;
+    font-family: "Nino", sans-serif;
+
+    &::placeholder {
+      opacity: 1;
+      color: #ffffff;
+      font-weight: 200;
+    }
+
+    &:focus {
+      border-color: rgba(255, 255, 255, 0.1);
+      outline: none;
+    }
   }
 
   .form-btns {
@@ -18,14 +28,7 @@
     align-items: center;
     font-size: 18px;
     padding: 20px 0;
-  }
-
-  ::ng-deep {
-    .form-btns {
-      button {
-        background-color: var(--border-hover-color);
-        color: var(--font-color);
-      }
-    }
+    color: #fff;
+    font-weight: 300;
   }
 }

@@ -16,7 +16,6 @@
         <div class="dropbtn">
           <i class="fa-solid fa-user"></i>
           {{ currentUser()?.username }}
-          <i class="fa fa-caret-down"></i>
         </div>
         <div class="dropdown-content">
           <a (click)="onLogOutClick()" routerLinkActive="active">Logout</a>
