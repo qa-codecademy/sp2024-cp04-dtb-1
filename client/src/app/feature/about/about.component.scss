@@ -6,7 +6,7 @@
   h1 {
     font-size: 60px;
     margin-bottom: 20px;
-    color: var(--font-color);
+    color: var(--font-white);
   }
 }
 
@@ -14,11 +14,10 @@
   p {
     font-size: 15px;
     font-weight: 200;
-    color: #323030;
     max-width: 800px;
     margin: 0 auto;
     padding-top: 20px;
-    color: var(--font-color);
+    color: var(--font-white);
   }
 }
 
@@ -28,7 +27,7 @@
   align-items: center;
   justify-content: center;
   text-align: left;
-  color: var(--font-color);
+  color: var(--font-white);
 }
 
 .about-img img {
@@ -54,7 +53,7 @@
 .team h1 {
   font-size: 45px;
   margin-bottom: 30px;
-  color: var(--font-color);
+  color: var(--font-white);
 }
 
 .team-cards {
@@ -66,13 +65,12 @@
 }
 
 .card {
-  background-color: white;
+  background-color: var(--translucent-color);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
   width: 280px;
-  height: 410px;
-  margin-top: 10px;
+  height: 430px;
 }
 
 .card:hover {
@@ -97,16 +95,16 @@
 
 .card-name {
   font-size: 2rem;
-  margin: 10px 0;
+
+  color: var(--font-white);
 }
 
 .card-role {
   font-size: 1rem;
-  color: #888;
-  margin: 5px 0;
+  color: var(--font-white);
 }
 
 .card-email {
   font-size: 1rem;
-  color: #555;
+  color: var(--font-white);
 }

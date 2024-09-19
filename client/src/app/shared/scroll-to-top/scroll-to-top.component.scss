@@ -1,7 +1,7 @@
 .to-top {
-  border: 1px solid #e9ecef;
-  color: #343a40;
-  background-color: #e9ecef;
+  border: 1px solid var(--background-color-button);
+  color: var(--color-font);
+  background-color: var(--background-color-button);
   cursor: pointer;
   margin: 0 50px 50px 0;
   padding: 5px;
@@ -13,12 +13,13 @@
   width: 70px;
   height: 70px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 15px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
   &:hover {
-    background-color: #b7c4cf;
-    border: 1px solid #b7c4cf;
+    background-color: var(--background-color-hover);
+    border: 1px solid var(--background-color-hover);
     transform: translateY(-2px);
   }
 }

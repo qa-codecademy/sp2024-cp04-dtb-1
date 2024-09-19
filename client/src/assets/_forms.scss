@@ -7,12 +7,13 @@
 .forms-container {
   width: 400px;
   height: 570px;
-  background-color: #fff;
+  background-color: var(--translucent-color);
+  color: var(--font-white);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
@@ -30,11 +31,12 @@
 .forms-register-container {
   width: 400px;
   height: 720px;
-  background-color: #fff;
+  background-color: var(--translucent-color);
   display: flex;
+  color: var(--font-white);
   flex-direction: column;
   align-items: center;
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 30px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
@@ -58,7 +60,7 @@
   font-weight: 300;
   line-height: 1.2;
   margin: 0 0 25px 0;
-  color: black;
+  color: var(--fond-white);
   text-transform: inherit;
   letter-spacing: inherit;
   text-align: center;
@@ -72,7 +74,7 @@
 
 .form-group {
   display: flex;
-  color: black;
+  color: var(--fond-black);
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -92,8 +94,8 @@
 }
 
 .form-login-remember {
-  height: 2s0px;
-  color: var(--font-color);
+  height: 20px;
+  color: var(--font-black);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,7 +107,7 @@
   align-items: center;
 
   label {
-    color: black;
+    color: var(--font-white);
     font-size: 13px;
     font-weight: 400;
   }
@@ -120,20 +122,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  button {
-    width: 150px;
-    height: 40px;
-    border-radius: 5px;
-    border: 1px solid #fff;
-    color: var(--font-color);
-    background-color: var(--bg-grey);
-    cursor: pointer;
-
-    &:hover {
-      background-color: var(--border-hover-color);
-    }
-  }
 }
 
 .form-message {
@@ -142,10 +130,10 @@
   gap: 5px;
   font-size: 14px;
   font-weight: 400;
-  color: black;
+  color: var(--fond-black);
 
   a {
-    color: darkblue;
+    color: var(--link-color);
   }
 }
 

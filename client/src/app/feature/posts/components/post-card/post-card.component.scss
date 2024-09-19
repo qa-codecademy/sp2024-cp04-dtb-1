@@ -5,9 +5,9 @@
 }
 
 .item-post {
-  width: 600px;
+  width: 700px;
   height: 500px;
-  background: #fff;
+  background-color: var(--translucent-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
@@ -16,8 +16,8 @@
 }
 
 .image-post {
-  height: 290px;
-  width: 600px;
+  height: 300px;
+  width: 100%;
 }
 
 .description-post {
@@ -28,7 +28,7 @@
   h2,
   p {
     margin: 0;
-    color: #333;
+    color: var(--font-white);
   }
 }
 .post-info {
@@ -42,7 +42,7 @@
   }
   samp {
     font-size: 15px;
-    color: #ffa534;
+    color: var(--raiting-star);
   }
 }
 
