@@ -13,3 +13,15 @@ export const AuthGuard = () => {
 
   return true;
 };
+
+export const loginRegisterGuard = () => {
+  const authService = inject(AuthService);
+  const router = inject(Router);
+
+  if (authService.currentUser()) {
+    router.navigate(['']);
+    return false;
+  }
+
+  return true;
+};

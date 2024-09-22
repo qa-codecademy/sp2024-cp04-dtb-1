@@ -1,4 +1,4 @@
-import { Component, output } from '@angular/core';
+import { Component, output, signal } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -16,6 +16,7 @@ import { ButtonComponent } from '../../../../shared/button/button.component';
 })
 export class CommentFormComponent {
   maxLength = 150;
+  isSubbmited = signal<boolean>(false);
 
   commentOutput = output<string>();
 
@@ -28,6 +29,8 @@ export class CommentFormComponent {
 
   onFormSubmit() {
     this.commentForm.markAllAsTouched();
+
+    this.isSubbmited.set(true);
 
     if (this.commentForm.invalid) return;
 
